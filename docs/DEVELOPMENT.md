@@ -20,7 +20,7 @@ npm test
 npm run build
 ```
 
-The three existing Node tests check file presence, absence of a published database port, and franchise disclosure text. They do not test API persistence, authentication, browser interactions, or Docker health. Add behavioral tests when implementing those features.
+Node tests check file presence, absence of a published database port, retired-route redirect coverage, and calendar UTC timestamps, reminder alarms, text escaping, and UTF-8 line folding. They do not test API persistence, authentication, browser interactions, or Docker health. Add behavioral tests when implementing those features.
 
 Stop the dev server before building, because both use `.next`. For production smoke testing, build and then run `npm run start -- --port 3100`. Type checking uses the generated Next type definitions when available.
 

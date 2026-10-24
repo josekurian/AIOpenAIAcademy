@@ -1,6 +1,6 @@
 # HybridGenAI Academy — Dockerized website foundation
 
-Independent AI education platform for Hybrid Cloud Services LLC. This repository is an **implemented public-site MVP foundation**, not the completed LMS, credentialing, placement, or franchise ERP system.
+Independent AI education platform for Hybrid Cloud Services LLC. This repository is an **implemented public-site MVP foundation**, not an official OpenAI platform or a completed LMS.
 
 ## Launch on macOS
 
@@ -17,28 +17,15 @@ curl http://localhost:3180/api/health
 
 Open http://localhost:3180. The PostgreSQL container is private to the Compose network, and the app uses its own named database volume. This does not modify any existing project or container. Change WEB_PORT if 3180 is already occupied.
 
-## Implemented
-- Light responsive interface, persistent desktop sidebar, mobile navigation drawer, and reduced-motion-aware CSS animations
-- Eight training program descriptions
-- Independent credential/certification-preparation disclosure
-- Job-placement support and employer-interest pages (no fake job postings)
-- Enterprise training inquiry page
-- Franchise exploration and lead collection page
-- Eight reusable, city-specific landing pages (all clearly marked planned)
-- PostgreSQL tables for training, enrollment, credentials, employer/job and franchise entities
-- Database-backed lead submission API with validation and honeypot
-- Dockerized Next.js app + PostgreSQL, health endpoint, basic tests
+## Scope and features
+This site is exclusively for OpenAI training and credentials: ChatGPT, Codex, and the OpenAI API. It includes an official learning-resource guide, a searchable 14-course snapshot, credential explanations, and proposed independent HybridGenAI workshops. No OpenAI affiliation or certification authority is claimed.
 
-## Not yet implemented / must not be advertised as operational
-- Learner login, authentication, payments, LMS, exams, credential issuance and verification
-- Actual job board, employer matching, job placement, resume parsing, hiring workflow
-- Instructor portal, corporate tenant portal, franchise operator administration
-- AI tutor, coding sandboxes, OpenAI API integrations, MCP, RAG, analytics
-- Rate limiting, email verification, consent capture, production anti-spam, complete accessibility/security audits
-- Franchise legal documentation and registrations, OpenAI authorization, official vendor credentials
+The interface uses readable text, restrained headings, redwood accents, responsive navigation, reduced-motion support, share/copy controls, print layouts, and generated social previews. Old career, franchise, enterprise, and city routes redirect to the learning guide.
 
-## Production prerequisites
-Before public launch add: consent and privacy policy, retention/deletion workflows, rate limits and CAPTCHA/turnstile, email confirmation, monitoring, backups with restore drills, managed TLS, authorization, vulnerability checks, incident response, and legal review. Never publish speculative centers as operating locations.
+The inquiry API is implemented, but production lead capture still needs consent, abuse controls, retention workflows, monitoring, TLS, and tested backups. No LMS, authentication, payment, or official examination service is implemented. Legacy database tables are unused scaffolding, not active features.
+
+## Shareable deployment
+Set `NEXT_PUBLIC_SITE_URL` to your real public HTTPS origin before building. Docker Compose forwards it to the image build. Localhost links only work on the local computer; GitHub source publication does not deploy the website. See [content and sharing](docs/OPENAI_CONTENT.md).
 
 ## Development commands
 Use Node.js 22. Run `npm ci`, `npm run dev`, `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build`. Stop the dev server before a production build.

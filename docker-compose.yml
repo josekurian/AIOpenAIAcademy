@@ -1,7 +1,10 @@
 name: aiopenaiacademy
 services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-}
     restart: unless-stopped
     ports:
       - "${WEB_PORT:-3180}:3000"

@@ -1,13 +1,15 @@
 # Codex implementation handoff
 
-Project location: `/Users/josekurian/AIOpenAIAcademy`. The local Codex workspace can edit this checkout. Inspect the actual environment before assuming access in other sessions.
+Workspace: `/Users/josekurian/AIOpenAIAcademy`. Read `AGENTS.md` and `PROJECT.md` first.
 
-Start with `AGENTS.md` and `PROJECT.md`. Current architecture is in `docs/ARCHITECTURE.md`; dated checks and remaining verification are in `docs/VERIFICATION.md`. The current user request takes priority over the default continuation below.
+## Latest direction
+The public website is for OpenAI training and credentials only. Keep careers, franchise, centers, and other-vendor training removed. Legacy URLs redirect to `/openai-training`. Use restrained heading sizes, readable body text, and redwood accents.
 
-You are the lead engineer for HybridGenAI Academy. Inspect the repository, README, roadmap, tests and existing code before making changes. Preserve functional pages and never invent OpenAI authorization, official credentials, customer results, franchise availability or employer partnerships. Treat every city as a planned landing page until independently verified.
+## Content
+Official course data is an editorial snapshot in `lib/openai-learning.ts`; the credential guide links directly to official requirements. Review sources before updates, and record the date actually checked. HybridGenAI workshops are independent and proposed. Do not imply OpenAI affiliation, credential issuance, or access to invitation-only offerings.
 
-**Default next platform phase (when requested):** Implement Phase 2 security and operations, then Phase 3 learner MVP, in small testable commits. Keep PostgreSQL as system of record and Docker Compose as local deployment contract. Introduce FastAPI only when the Python AI/lab services require it; avoid unnecessary services. Implement real authentication and authorization before exposing admin endpoints. Add migrations and tenant-level tests. Ensure no personal data crosses center/organization boundaries. Add request rate limiting, consent capture, privacy notices, backups and monitoring before public lead capture goes live.
+## Delivery
+Run lint, type checking, tests, build, and relevant browser checks. Verify sharing fallbacks, print output, mobile filters, and old-route redirects when changing those features. Set `NEXT_PUBLIC_SITE_URL` to the real public HTTPS origin at build time before deployment. Localhost links cannot be opened by remote recipients.
 
-**Franchise distribution:** Build a site-template package with city configuration (slug, name, address, verified operating status, approved contact details, local offerings). Implement a repeatable `docker compose -p academy_CITY` deployment profile with unique ports, credentials and volumes only when independent deployments are justified. Maintain shared source, automated updates and per-city isolation; do not fork and manually edit 50 copies.
-
-**Verification:** Run `npm run typecheck`, `npm test`, `npm run build`, Docker Compose health checks and browser E2E tests. Report actual results, missing provider credentials and outstanding security gaps. Ask before destructive database migrations or external account actions.
+## Remaining boundaries
+Inquiry persistence and full Docker deployment need integration verification. Public lead collection needs consent and abuse controls. Legacy database tables remain unused; do not delete persistent data during UI work. Follow `docs/IMPLEMENTATION_ROADMAP.md` only for requested work, not automatic platform expansion.

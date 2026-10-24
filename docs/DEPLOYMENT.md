@@ -22,8 +22,8 @@ Before any data-changing release, create an access-controlled database backup us
 ## Release and rollback
 Run the development checks, build a versioned image, and validate against a disposable database before deploying. Record the image version and database migration version. Roll back application images only when the current schema is compatible; do not assume code rollback reverses database changes.
 
-## Multiple centers
-Keep shared source and configuration-driven city pages. If independent deployments become necessary, use distinct Compose project names (`docker compose -p academy_CITY ...`), environment files, ports, credentials, and volumes. These operating conventions do not create tenant authorization in application code. Central multi-tenant operation still needs enforced and tested tenant boundaries.
+## Public sharing
+Set `NEXT_PUBLIC_SITE_URL` to the public HTTPS origin before building. Compose forwards it as a build argument. Rebuild when the origin changes, and verify canonical links and `/opengraph-image` from outside the host network. Localhost is not remotely shareable.
 
 ## Public launch gates
 Consent and privacy notices, request abuse controls, retention/deletion processes, observability, tested backups, TLS, incident ownership, reviewed public claims, and appropriate authorization remain outstanding. Authentication and tenant enforcement must precede private portals. Local build success does not establish production readiness or verify Docker deployment.

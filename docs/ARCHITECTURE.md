@@ -7,9 +7,9 @@ Next.js 15 App Router with React 19 and TypeScript serves pages and HTTP handler
 - `app/layout.tsx` wraps all pages with `components/Nav.tsx`, the main landmark, and footer.
 - `components/Nav.tsx` owns route-aware sidebar state and mobile keyboard behavior.
 - `app/globals.css` contains the shared design and responsive styles, including reduced motion.
-- `app/page.tsx` is the homepage. `/courses`, `/certifications`, `/jobs`, `/enterprise`, `/franchise`, and `/about` provide public information.
-- `app/centers/[city]/page.tsx` generates city pages from `lib/catalog.ts`. All listed centers are planned.
-- `lib/catalog.ts` is currently the public content source. The `programs` database table is not synchronized with it.
+- `app/page.tsx` is the homepage. `/openai-training`, `/courses`, `/certifications`, `/events`, and `/about` provide public information.
+- Legacy `/jobs`, `/enterprise`, `/franchise`, and `/centers/[city]` routes redirect permanently to `/openai-training`.
+- `lib/openai-learning.ts` holds official resource snapshots. `lib/catalog.ts` holds proposed independent workshops. The `programs` database table is not synchronized with it.
 
 ## Inquiry flow
 `components/LeadForm.tsx` posts JSON to `/api/leads`. The route validates with Zod and inserts a parameterized query into `leads` through the reusable `pg` pool in `lib/db.ts`.
@@ -24,4 +24,7 @@ Compose exposes the web service at host port 3180 by default; the database has n
 The schema has future-facing tables, but no authentication, tenant enforcement, RLS policies, or migration framework. Do not assume organizations or centers provide isolation merely because they have IDs.
 
 ## Extension rules
-Introduce authorization and tested data boundaries before private portals. Use additive, versioned migrations with recovery plans. Keep city templates shared. Introduce Python services, queues, or storage systems only when an implemented feature requires them. Future architecture in the roadmap is a target, not a description of this deployment.
+Introduce authorization and tested data boundaries before private portals. Use additive, versioned migrations with recovery plans. Keep the public scope exclusively OpenAI training and credential guidance. Introduce Python services, queues, or storage systems only when an implemented feature requires them. Future architecture in the roadmap is a target, not a description of this deployment.
+
+## Event reminders
+`lib/events.ts` stores reviewed official destinations and event schedules. `/events` renders current past/scheduled labels per request. The calendar route emits ICS files through `lib/calendar.mjs`, with escaping and UTF-8 line folding. No email or push service is implemented.
