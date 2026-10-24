@@ -6,7 +6,7 @@ Verified locally on October 24, 2026, after the OpenAI-only scope change and red
 | --- | --- |
 | `npm run typecheck` | Passed |
 | `npm run lint` | Passed without warnings |
-| `npm test` | Passed, 5 tests including calendar encoding and reminder coverage |
+| `npm test` | Passed, 6 tests including calendar encoding and reminder coverage |
 | `npm run build` | Passed, including generated social image |
 | `docker compose config --quiet` | Passed |
 | Public-page layouts | Homepage, learning hub, credentials, guided training, and about checked at 320, 390, 768, 1024, and 1440px; no horizontal overflow |
@@ -28,3 +28,6 @@ The existing database has legacy tables from the original broader platform conce
 
 ## Events and communication follow-up
 The event page was checked at 320, 390, 768, 1024, and 1440px with no horizontal overflow. Six sourced event cards rendered. The wildlife session displayed the correct Central daylight time. Its ICS download returned the expected filename, UTC start, and 15-minute alarm; unknown IDs returned 404. The header bell and mobile active-navigation state passed. Direct links route users to provider registration/support; no email or push subscription is implied.
+
+## Category and registration update
+Lint, typecheck, six tests, and production build passed after the category redesign. Browser checks passed at 320, 390, 768, 1024, and 1440px on the homepage, events, credentials, API pathway, and community with no horizontal overflow. Regional listing counts (18 total) and pathway course counts passed. Compact registration opening, Escape, legacy hash entry, optional-field collapse, and a mocked successful submission passed; no real inquiry was sent. Unknown event regions and calendar entries without announced end times returned 404. No browser runtime errors were observed. Desktop and mobile previews were inspected. Earlier six-event checks above describe the previous snapshot.

@@ -19,3 +19,6 @@ Check at 1440px, 1024px, 900px, 768px, 390px, and 320px. Look for clipping, hori
 
 ## Readability and scope
 Use redwood `#914d3e` for key phrases, primary buttons, and selected navigation. Body copy should be dark and generally 15–16px; page headings should stay around 29–40px. Avoid oversized promotional headlines. Public content is exclusively about OpenAI training and credentials.
+
+## Category navigation and accents
+Use Training, Credentials, Events, and Community accordion menus with focused subpages. Dallas–Fort Worth is the local event region. Keep the homepage concise. Muted green `#34705b` and orange `#a8561e` highlight selected headings alongside redwood actions. Registration stays in the top-right header and opens a compact native dialog; optional fields remain collapsed. Preserve Escape dismissal, focus restoration, mobile sizing, and reduced-motion support.

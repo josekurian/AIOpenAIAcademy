@@ -28,3 +28,6 @@ Introduce authorization and tested data boundaries before private portals. Use a
 
 ## Event reminders
 `lib/events.ts` stores reviewed official destinations and event schedules. `/events` renders current past/scheduled labels per request. The calendar route emits ICS files through `lib/calendar.mjs`, with escaping and UTF-8 line folding. No email or push service is implemented.
+
+## Public navigation
+`lib/navigation.ts` defines category menus and submenus. Training pathways, credential topics, regional events, and community/support have dedicated server-rendered pages. `RegistrationWidget` owns the persistent header dialog and reuses compact `LeadForm`; page CTAs trigger the same dialog. Event rendering is shared by `EventSchedule`.

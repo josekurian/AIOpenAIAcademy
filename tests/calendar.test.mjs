@@ -18,3 +18,8 @@ test('calendar escapes text and folds UTF-8 lines without changing the title',()
  assert.ok(unfolded.includes('SUMMARY:Résumé\\, science\\; review\\\\notes\\n'+'🐾'.repeat(50)));
  assert.equal(unfolded.split('BEGIN:VEVENT').length,2);
 });
+
+test('in-person reminders preserve the venue instead of labeling the event online',()=>{
+ const calendar=eventCalendar({...event,location:'Dallas College, Dallas; TX'});
+ assert.match(calendar,/LOCATION:Dallas College\\, Dallas\\; TX/);
+});

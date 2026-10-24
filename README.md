@@ -20,7 +20,7 @@ Open http://localhost:3180. The PostgreSQL container is private to the Compose n
 ## Scope and features
 This site is exclusively for OpenAI training and credentials: ChatGPT, Codex, and the OpenAI API. It includes an official learning-resource guide, a searchable 14-course snapshot, credential explanations, and proposed independent HybridGenAI workshops. No OpenAI affiliation or certification authority is claimed.
 
-The interface uses readable text, restrained headings, redwood accents, responsive navigation, reduced-motion support, share/copy controls, print layouts, and generated social previews. Old career, franchise, enterprise, and city routes redirect to the learning guide.
+The interface uses readable text, restrained headings, redwood, green, and orange accents, category navigation with submenus, reduced-motion support, share/copy controls, print layouts, and generated social previews. Old career, franchise, enterprise, and city routes redirect to the learning guide.
 
 The inquiry API is implemented, but production lead capture still needs consent, abuse controls, retention workflows, monitoring, TLS, and tested backups. No LMS, authentication, payment, or official examination service is implemented. Legacy database tables are unused scaffolding, not active features.
 

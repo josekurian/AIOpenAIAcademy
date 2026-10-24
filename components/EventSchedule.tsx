@@ -1,0 +1,20 @@
+import Link from 'next/link';
+import {ArrowUpRight, Download, MapPin} from 'lucide-react';
+import {events, eventReviewDate, type EventRegion, type LearningEvent} from '@/lib/events';
+export const eventRegions = [
+ {slug:'local',label:'Dallas–Fort Worth',description:'In-person events in your local DFW area.'},
+ {slug:'texas',label:'Elsewhere in Texas',description:'Texas sessions outside Dallas–Fort Worth, listed separately from out-of-state travel.'},
+ {slug:'out-of-state',label:'Out of state',description:'In-person U.S. sessions outside Texas.'},
+ {slug:'international',label:'International',description:'OpenAI sessions outside the United States. Confirm approval and dates before travel.'},
+ {slug:'online',label:'Online sessions',description:'Attend remotely. Times are shown in Dallas–Fort Worth’s Central time zone.'},
+];
+function weekKey(start:string){const date=new Date(start.slice(0,10)+'T12:00:00Z');const day=(date.getUTCDay()+6)%7;date.setUTCDate(date.getUTCDate()-day);return date.toISOString().slice(0,10);}
+function scheduleTime(event:LearningEvent){const date=new Intl.DateTimeFormat('en-US',{timeZone:event.timeZone,month:'short',day:'numeric',year:'numeric'}).format(new Date(event.start));const time=new Intl.DateTimeFormat('en-US',{timeZone:event.timeZone,hour:'numeric',minute:'2-digit',timeZoneName:'short'});return `${date} · ${time.format(new Date(event.start))}${event.end?` – ${time.format(new Date(event.end))}`:' · end time unannounced'}`;}
+export default function EventSchedule({region}:{region?:EventRegion}){
+ const selected=events.filter(event=>!region||event.region===region).sort((a,b)=>a.start.localeCompare(b.start));
+ const weeks=[...new Set(selected.map(event=>weekKey(event.start)))];
+ return <><div className="container regionNavigation" aria-label="Event categories"><Link href="/events" aria-current={!region?'page':undefined}>All weeks</Link>{eventRegions.map(item=><Link key={item.slug} href={`/events/${item.slug}`} aria-current={region===item.slug?'page':undefined}>{item.label}</Link>)}</div><div className="container weeklySchedule"><div className="scheduleContext"><span>{selected.length} verified listings · Reviewed {eventReviewDate}</span><span>Local = Dallas–Fort Worth</span></div>{weeks.map(week=><section className="scheduleWeek" key={week}><h2>Week of {new Intl.DateTimeFormat('en-US',{timeZone:'UTC',month:'long',day:'numeric'}).format(new Date(week+'T12:00:00Z'))}</h2>{selected.filter(event=>weekKey(event.start)===week).map(event=>{
+ const ended=new Date(event.end || event.start).getTime()<Date.now();
+ return <article className="scheduleEvent" key={event.slug}><div className="scheduleEventBody"><div className="eventTags"><span className="softBadge">{eventRegions.find(item=>item.slug===event.region)?.label}</span><small>{event.provider}{ended?' · Past session':''}</small></div><h3>{event.title}</h3><p className="scheduleTime">{scheduleTime(event)}</p><p className="scheduleLocation"><MapPin size={14}/>{event.location}</p><p>{event.description}</p></div><div className="scheduleActions"><a className="button primary" href={event.url}>{ended?'View official page':event.region==='international'?'Apply with OpenAI':'Registration details'}<ArrowUpRight size={15}/></a>{!ended&&event.end&&<a className="calendarLink" href={`/events/calendar/${event.slug}`} download><Download size={14}/>Calendar reminder</a>}</div></article>;
+ })}</section>)}<p className="catalogFootnote">Published listings are grouped by week; they are not weekly recurring events. This is a reviewed snapshot, not a live or exhaustive calendar. In-person times use the venue’s time zone; online times use America/Chicago. Verify schedule and eligibility with the provider. Reminders do not register you or track changes.</p><div className="actions"><a className="textLink" href="https://academy.openai.com/public/events">Full Academy calendar ↗</a><a className="textLink" href="https://forum.openai.com/public/events">Full Forum calendar ↗</a></div></div></>;
+}

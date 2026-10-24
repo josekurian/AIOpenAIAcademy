@@ -25,7 +25,7 @@ Preserve source links near claims. Recheck dates, availability, and conditions r
 A GitHub repository is a source-sharing destination, not a deployed Next.js website. A public host and reachable HTTPS URLs are required for remote visitors and social preview crawlers.
 
 ## Events and provider communication
-`/events` links directly to OpenAI Forum membership, the complete Forum event directory, replays, Academy events/resources, developer discussions, and support. The supplied wildlife event was verified on its official public page. Event data in `lib/events.ts` is a reviewed selection, not a synchronized feed. Provider schedules remain authoritative.
+`/community` links directly to OpenAI Forum membership, the complete Forum event directory, replays, Academy events/resources, developer discussions, and support. The supplied wildlife event was verified on its official public page. Event data in `lib/events.ts` is a reviewed selection, not a synchronized feed. Provider schedules remain authoritative.
 
 Event times are stored in UTC and displayed in America/Chicago, with daylight-saving changes handled by `Intl.DateTimeFormat`. Ended sessions are labeled as past, and reminder actions disappear. The event page renders dynamically to avoid permanently caching upcoming labels.
 
@@ -40,3 +40,6 @@ Additional reviewed sources:
 - [Academy events](https://academy.openai.com/public/events)
 - [Developer Community](https://community.openai.com/)
 - [Official support instructions](https://help.openai.com/en/articles/6614161-how-can-i-contact-support)
+
+## Regional schedule
+The October 24 snapshot contains 18 listings: one Dallas–Fort Worth, one elsewhere in Texas, four out-of-state, five international, and seven online. `/events/[region]` groups these by week; this is not an exhaustive or recurring weekly schedule. International events with unannounced end times have no ICS download. In-person reminders preserve venue locations.
