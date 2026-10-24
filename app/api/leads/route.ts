@@ -1,0 +1,5 @@
+import {NextRequest,NextResponse} from 'next/server';
+import {z} from 'zod';
+import {getPool} from '@/lib/db';
+const leadSchema=z.object({kind:z.enum(['student','enterprise','franchise','instructor','employer']),name:z.string().trim().min(2).max(120),email:z.email().max(254),city:z.string().max(120).optional(),message:z.string().max(3000).optional(),website:z.string().optional()});
+export async function POST(req:NextRequest){try{const body=await req.json();const parsed=leadSchema.safeParse(body);if(!parsed.success)return NextResponse.json({error:'Invalid submission'},{status:400});const lead=parsed.data;if(lead.website)return NextResponse.json({success:true});const result=await getPool().query('INSERT INTO leads(kind,name,email,city,message) VALUES($1,$2,$3,$4,$5) RETURNING id',[lead.kind,lead.name,lead.email,lead.city||null,lead.message||null]);return NextResponse.json({success:true,id:result.rows[0].id},{status:201});}catch{return NextResponse.json({error:'Unable to save inquiry'},{status:503});}}

@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.env
+.env.local
+*.log
+
+*.tsbuildinfo
+
+# Local credentials and operating-system files
+.env.*
+!.env.example
+.DS_Store
