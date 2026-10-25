@@ -34,3 +34,6 @@ Lint, typecheck, six tests, and production build passed after the category redes
 
 ## Public and partner directories — October 25, 2026
 Lint, typecheck, six tests, and production build passed. The production browser rendered all eight credential entries, active sidebar selection, official links, and expandable access details. Desktop screenshots were inspected; the credential directory had no horizontal overflow. Partner application wording was verified in the official browser page without submitting data. Restricted partner catalogs, live enrollment, and credential issuance were not tested.
+
+## Learning roadmap — October 25, 2026
+Lint, typecheck, all nine tests, and production build passed. New tests cover slower schedules, contiguous phases, experience adjustments, specialization outputs, and invalid-input fallbacks. Browser verification of the beginner developer profile at 3 hours/week produced four phases, six course recommendations, and a 28-week estimate. Desktop rendering had no horizontal overflow. Download code was reviewed; file download and narrow-screen browser behavior were not exercised in this pass.

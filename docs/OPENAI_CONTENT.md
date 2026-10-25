@@ -46,3 +46,6 @@ The October 24 snapshot contains 18 listings: one Dallas–Fort Worth, one elsew
 
 ## Public and partner review — October 25, 2026
 `lib/training-programs.ts` records eight publicly verifiable routes with individual source URLs: public Academy, Coursera teachers, OpenAI Certified, Partner Network, Frontier Alliances, TCS India, historical AI Foundations pilots, and Activator Labs. Partner-only catalogs were not accessible; no exhaustive certification claim is made. The Coursera teachers page contradicts itself (a module mentions a certificate, but its FAQ explicitly says no credentials); the guide exposes that conflict instead of promising a certificate. Current Help Center access guidance takes precedence over the December 2025 pilot announcement. Official Academy course outcomes and dates were refreshed.
+
+## User roadmap adaptation
+The supplied roadmap informed five independent learning profiles and four practice phases. Unrelated third-party article titles and other-vendor content were omitted. Study hours and sequences are HybridGenAI estimates, not official prerequisites, certification tracks, or promises of mastery. Existing verified Academy course data supplies recommendations and credential links. No new partner authorization or exam availability is inferred.

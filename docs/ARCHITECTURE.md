@@ -31,3 +31,6 @@ Introduce authorization and tested data boundaries before private portals. Use a
 
 ## Public navigation
 `lib/navigation.ts` defines category menus and submenus. Training pathways, credential topics, regional events, and community/support have dedicated server-rendered pages. `RegistrationWidget` owns the persistent header dialog and reuses compact `LeadForm`; page CTAs trigger the same dialog. Event rendering is shared by `EventSchedule`.
+
+## Learning roadmap
+`/roadmap` uses the client-side `RoadmapBuilder` and pure `lib/roadmap.mjs` rules. Five goal profiles select official Academy courses and independent practice projects. Estimated week ranges use the lower end of weekly availability; beginner and advanced foundation estimates differ. Budget changes cost guidance, not certification access. No API, account, storage, or personal-data submission is involved. Text export uses a local Blob download.
