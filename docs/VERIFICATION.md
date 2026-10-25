@@ -40,3 +40,10 @@ Lint, typecheck, all nine tests, and production build passed. New tests cover sl
 
 ## Cheat-sheet library — October 25, 2026
 Lint, typecheck, nine tests, and production build passed. Verified 26 unique guides and all twenty numbered use cases. HTTP checks passed for all 52 individual Markdown/text downloads, the full bundle, unknown-guide 404, and unsupported-format 400. Browser search narrowed to use case 20 and its reading page opened correctly with no desktop overflow. PDF saving and execution of the individual learning labs were not verified.
+
+## Landing-page release — October 25, 2026
+Lint, typecheck, nine tests, and the production build passed. A recursive HTTP crawl checked 116 internal URLs (including 66 non-HTML downloads/resources) and page anchors with zero failures. All 41 discovered external destinations were checked: 35 succeeded directly; six returned automated-request 403 responses and were independently retrieved through web browsing. These checks establish reachability, not provider enrollment or ongoing availability.
+
+Desktop browser inspection confirmed the new landing layout, six destination cards, compact registration dialog, and homepage-to-roadmap generation (four phases). No desktop horizontal overflow was observed. The CSS includes responsive layouts and reduced-motion overrides; a new mobile viewport audit was not performed in this pass. Inquiry invalid-input and honeypot responses were 400 and 200 respectively, without a real submission. Database health returned 503 locally, so persistence and full Docker deployment remain unverified. `docker compose config --quiet` passed.
+
+OCI deployment and capacity inspection are deferred at the user’s request until they confirm the tenancy/server and domain. No OCI resources, firewall rules, or server workloads were modified.

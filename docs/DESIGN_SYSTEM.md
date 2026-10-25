@@ -27,3 +27,6 @@ Use Training, Credentials, Events, and Community accordion menus with focused su
 Use bold navigation and headings, semibold paragraph text, and darker secondary copy for readability. Keep the existing restrained heading scale and green/orange/redwood accents. Small homepage and registration disclosures use at least 12px; navigation uses 14px. Avoid pale, thin labels.
 
 Top-bar breadcrumbs use bold 16px dark text (14px on compact desktop/tablet widths). Card access labels use bold 13px text with stronger contrast and wrapping. Preserve the mobile header layout.
+
+## Landing-page organization
+The homepage uses a two-column introduction, compact CSS 3D learning cube, independent-provider statement, six destination cards, three-step learning journey, three starter resources, and local/community calls to action. Counts derive from catalog data. Keep animation slow, decorative, dependency-free, and disabled under reduced motion. Detailed content remains in category pages.
