@@ -25,3 +25,5 @@ Use Training, Credentials, Events, and Community accordion menus with focused su
 
 ## Text weight update — October 25, 2026
 Use bold navigation and headings, semibold paragraph text, and darker secondary copy for readability. Keep the existing restrained heading scale and green/orange/redwood accents. Small homepage and registration disclosures use at least 12px; navigation uses 14px. Avoid pale, thin labels.
+
+Top-bar breadcrumbs use bold 16px dark text (14px on compact desktop/tablet widths). Card access labels use bold 13px text with stronger contrast and wrapping. Preserve the mobile header layout.

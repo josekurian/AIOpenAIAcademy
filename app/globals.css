@@ -79,3 +79,11 @@ main h1,main h2,main h3,.welcomeCopy h1,.landingSectionTitle h2,.landingPath h3,
 .localNavCard small{font-size:10px;font-weight:700;color:#365641}
 .roadmapSection{padding-bottom:70px}.roadmapForm{background:#fffdfb;border:1px solid #e4d8cc;border-radius:18px;padding:28px}.roadmapFields{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:24px 0}.roadmapFields label{display:grid;gap:10px;font-size:15px;font-weight:700}.roadmapFields select{width:100%;min-width:0;font:inherit;font-size:16px;color:#39342f;background:#fff;padding:14px 10px;border:1px solid #af9c8d;border-radius:8px}.roadmapFields select:focus-visible{outline:3px solid #914d3e;outline-offset:3px}.roadmapStatus{margin:24px 0;font-weight:700;color:#34705b}.roadmapResult .sectionHeader{align-items:center}.roadmapResult .sectionHeader h2{font-size:26px}.roadmapResult .section{padding-top:45px;padding-bottom:35px}@media(max-width:750px){.roadmapFields{grid-template-columns:1fr}.roadmapForm{padding:20px}.roadmapResult .sectionHeader{flex-direction:column;align-items:flex-start}}
 .guideBody{padding-bottom:60px;max-width:1000px}.guideBody section{padding:24px 0;border-top:1px solid #e4d8cc;break-inside:avoid}.guideBody h2{font-size:23px;line-height:1.4}.guideBody p{white-space:pre-wrap;overflow-wrap:anywhere;font-size:16px;line-height:1.85}.guideBody a{overflow-wrap:anywhere;text-decoration:underline}.guideBody li{margin-bottom:12px}@media print{.guideBody section{break-inside:auto}.guideBody{max-width:none}.guideBody p{font-size:11pt}}
+
+/* Keep the fixed header and card labels readable at normal zoom. */
+.breadcrumb{font-size:16px;font-weight:700;line-height:1.4;color:#40362f;min-width:0}
+.breadcrumb strong{font-size:inherit;font-weight:700;color:#302a25;overflow-wrap:anywhere}
+.breadcrumb svg{flex-shrink:0;color:#594a3f}
+.softBadge{font-size:13px;font-weight:700;line-height:1.6;color:#663a29;background:#f1dfd2;padding:8px 12px;white-space:normal}
+.sidebarIntro,.sidebarBottom{font-size:12px;font-weight:600;color:#51473e}
+@media(min-width:751px) and (max-width:1050px){.breadcrumb{font-size:14px;gap:7px}}
