@@ -31,3 +31,6 @@ The event page was checked at 320, 390, 768, 1024, and 1440px with no horizontal
 
 ## Category and registration update
 Lint, typecheck, six tests, and production build passed after the category redesign. Browser checks passed at 320, 390, 768, 1024, and 1440px on the homepage, events, credentials, API pathway, and community with no horizontal overflow. Regional listing counts (18 total) and pathway course counts passed. Compact registration opening, Escape, legacy hash entry, optional-field collapse, and a mocked successful submission passed; no real inquiry was sent. Unknown event regions and calendar entries without announced end times returned 404. No browser runtime errors were observed. Desktop and mobile previews were inspected. Earlier six-event checks above describe the previous snapshot.
+
+## Public and partner directories — October 25, 2026
+Lint, typecheck, six tests, and production build passed. The production browser rendered all eight credential entries, active sidebar selection, official links, and expandable access details. Desktop screenshots were inspected; the credential directory had no horizontal overflow. Partner application wording was verified in the official browser page without submitting data. Restricted partner catalogs, live enrollment, and credential issuance were not tested.

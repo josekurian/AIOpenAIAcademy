@@ -1,5 +1,6 @@
 export const navigation = [
   {label:'Training', href:'/openai-training', items:[
+    {label:'Public & partner programs',href:'/openai-training/programs'},
     {label:'All OpenAI courses',href:'/openai-training'},
     {label:'ChatGPT foundations',href:'/openai-training/foundations'},
     {label:'API development',href:'/openai-training/api'},
@@ -8,6 +9,7 @@ export const navigation = [
     {label:'Guided workshops',href:'/courses'},
   ]},
   {label:'Credentials',href:'/certifications',items:[
+    {label:'Credential directory',href:'/certifications/directory'},
     {label:'Compare credentials',href:'/certifications'},
     {label:'Academy badges',href:'/certifications/badges'},
     {label:'OpenAI Certified',href:'/certifications/certified'},

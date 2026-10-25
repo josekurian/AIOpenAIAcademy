@@ -5,7 +5,8 @@ An independent OpenAI training and credential guide operated by Hybrid Cloud Ser
 
 ## Implemented
 - OpenAI-focused homepage, learning hub, credential guide, about page, and proposed independent guided-training catalog.
-- A sourced snapshot of 14 official OpenAI Academy courses with search and pathway filters.
+- A sourced snapshot of 14 official OpenAI Academy courses with learning outcomes, search, and pathway filters.
+- Public/partner program and credential directories covering eight verified routes with access requirements and official sources.
 - Official resource links, review date, and distinctions between Academy completion credentials and the separate restricted OpenAI Certified experience.
 - Redwood accents, restrained headings, readable text, responsive navigation, and reduced-motion support.
 - Native sharing with copy/manual fallbacks, print styling, and social preview metadata/image.
