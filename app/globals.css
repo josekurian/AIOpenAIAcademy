@@ -63,3 +63,17 @@ body{background:var(--bg);font-size:16px;line-height:1.6}.sidebar,.topbar{border
 
 @media(max-width:1200px){.canvasCore span{display:none}}
 .programGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.programCard{padding:26px;border:1px solid var(--line,#e6d9ce);border-radius:18px;background:#fffdfb;min-width:0;scroll-margin-top:100px}.programCard h2,.programCard h3{font-size:22px;line-height:1.35;margin:18px 0 12px}.programCard p,.programCard dd{font-size:15px;line-height:1.75;color:#615b55}.programCard dt{font-weight:650;font-size:13px;margin-top:16px}.programCard dd{margin:5px 0 0}.programCard details{margin:20px 0}.programCard summary{cursor:pointer;font-weight:600;font-size:14px;color:#34705b}.programCard>.textLink{display:block;margin-top:18px}.programCard .softBadge{white-space:normal}.programCard .actions{flex-wrap:wrap}#public,#partner{scroll-margin-top:88px}@media(max-width:750px){.programGrid{grid-template-columns:1fr}.programCard{padding:21px}}
+
+/* Readability: stronger text without enlarging the headline scale. */
+:root{--muted:#4b4641}
+body{font-weight:500}
+main p,main dd,main li,.sidebar p,.footer p,.footer small{font-weight:600;color:#49443f}
+main h1,main h2,main h3,.welcomeCopy h1,.landingSectionTitle h2,.landingPath h3,.landingLocal h2,.registrationHeading h2{font-weight:700}
+.navCategoryToggle,.navSubmenu a,.navSubmenu a.active{font-weight:700;font-size:14px}
+.navCategoryToggle,.navSubmenu a{color:#493f37}
+.welcomeNote,.landingDisclosure,.landingSectionTitle>p,.canvasTile small,.scheduleContext,.scheduleEvent .eventTags small,.registrationDisclosure,.reviewStamp,.catalogFootnote,.resourceHost{font-weight:600;color:#584b40}
+.welcomeNote,.landingDisclosure,.registrationDisclosure{font-size:12px}
+.canvasTile small{font-size:10px;font-weight:700}.canvasTile b,.canvasCore span{font-weight:700}
+.landingPath p,.landingLocal p{font-size:14px;font-weight:600;color:#49443f}
+.welcomeSecondary,.regionNavigation a,.calendarLink,.optionalFields summary{font-weight:700}
+.localNavCard small{font-size:10px;font-weight:700;color:#365641}

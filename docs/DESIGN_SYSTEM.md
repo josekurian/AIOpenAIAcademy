@@ -22,3 +22,6 @@ Use redwood `#914d3e` for key phrases, primary buttons, and selected navigation.
 
 ## Category navigation and accents
 Use Training, Credentials, Events, and Community accordion menus with focused subpages. Dallas–Fort Worth is the local event region. Keep the homepage concise. Muted green `#34705b` and orange `#a8561e` highlight selected headings alongside redwood actions. Registration stays in the top-right header and opens a compact native dialog; optional fields remain collapsed. Preserve Escape dismissal, focus restoration, mobile sizing, and reduced-motion support.
+
+## Text weight update — October 25, 2026
+Use bold navigation and headings, semibold paragraph text, and darker secondary copy for readability. Keep the existing restrained heading scale and green/orange/redwood accents. Small homepage and registration disclosures use at least 12px; navigation uses 14px. Avoid pale, thin labels.
