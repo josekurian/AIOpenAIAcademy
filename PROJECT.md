@@ -4,6 +4,7 @@
 An independent OpenAI training and credential guide operated by Hybrid Cloud Services LLC. On October 24, 2026, the user narrowed the entire site to OpenAI training and certifications only. Careers, placement, franchise, city-center expansion, and other vendors are outside the current product scope.
 
 ## Implemented
+- Searchable Codex starter library: 26 online guides, individual Markdown/text downloads, a complete Markdown bundle, and browser print/PDF support.
 - Personalized learning roadmap with five goal profiles, experience/time-based schedules, practical deliverables, and a downloadable study plan.
 - OpenAI-focused homepage, learning hub, credential guide, about page, and proposed independent guided-training catalog.
 - A sourced snapshot of 14 official OpenAI Academy courses with learning outcomes, search, and pathway filters.

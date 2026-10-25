@@ -49,3 +49,6 @@ The October 24 snapshot contains 18 listings: one Dallas–Fort Worth, one elsew
 
 ## User roadmap adaptation
 The supplied roadmap informed five independent learning profiles and four practice phases. Unrelated third-party article titles and other-vendor content were omitted. Study hours and sequences are HybridGenAI estimates, not official prerequisites, certification tracks, or promises of mastery. Existing verified Academy course data supplies recommendations and credential links. No new partner authorization or exam availability is inferred.
+
+## Codex starter library — October 25, 2026
+26 independent guides in `content/cheat-sheets.json` cover a one-hour setup lab, five quick references, and twenty use cases. Official CLI, desktop quickstart, AGENTS.md, and API quickstart pages were opened and checked. Current CLI commands come from the official reference. Guides are suggested exercises, not official courses or credentials; environment examples are not claimed to be executed across all stacks. Markdown and plain-text downloads share the same source as the online pages. PDF uses the browser print dialog, not a generated PDF download.

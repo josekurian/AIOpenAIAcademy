@@ -6,6 +6,7 @@ export const navigation = [
     {label:'ChatGPT foundations',href:'/openai-training/foundations'},
     {label:'API development',href:'/openai-training/api'},
     {label:'Codex',href:'/openai-training/codex'},
+    {label:'Codex cheat sheets',href:'/cheat-sheets'},
     {label:'Leadership & education',href:'/openai-training/leadership-education'},
     {label:'Guided workshops',href:'/courses'},
   ]},

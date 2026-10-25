@@ -1,0 +1,5 @@
+import Link from 'next/link';
+import CheatSheetLibrary from '@/components/CheatSheetLibrary';
+import {pageMetadata} from '@/lib/site';
+export const metadata=pageMetadata('Codex Cheat Sheets & Setup Guides','Download Codex starter guides, quick references, and 20 practical use-case environment guides.','/cheat-sheets');
+export default function Library(){return <><section className="container pageHero"><div className="eyebrow">CODEX STARTER LIBRARY</div><h1>Set up. Build. <em>Keep a guide handy.</em></h1><p>26 practical guides: a one-hour starter lab, five quick references, and 20 numbered use cases. Read online, download Markdown or text, or print a guide to PDF.</p><p className="catalogFootnote">Independent learning material, with official references reviewed October 25, 2026. This is a starter collection, not an exhaustive product manual.</p><div className="actions"><Link className="button primary" href="/cheat-sheets/codex-setup-in-one-hour">Start the one-hour guide</Link><a className="button secondary" href="/cheat-sheets/download/all" download>Download all guides (.md)</a></div></section><CheatSheetLibrary/></>}

@@ -37,3 +37,6 @@ Lint, typecheck, six tests, and production build passed. The production browser 
 
 ## Learning roadmap — October 25, 2026
 Lint, typecheck, all nine tests, and production build passed. New tests cover slower schedules, contiguous phases, experience adjustments, specialization outputs, and invalid-input fallbacks. Browser verification of the beginner developer profile at 3 hours/week produced four phases, six course recommendations, and a 28-week estimate. Desktop rendering had no horizontal overflow. Download code was reviewed; file download and narrow-screen browser behavior were not exercised in this pass.
+
+## Cheat-sheet library — October 25, 2026
+Lint, typecheck, nine tests, and production build passed. Verified 26 unique guides and all twenty numbered use cases. HTTP checks passed for all 52 individual Markdown/text downloads, the full bundle, unknown-guide 404, and unsupported-format 400. Browser search narrowed to use case 20 and its reading page opened correctly with no desktop overflow. PDF saving and execution of the individual learning labs were not verified.

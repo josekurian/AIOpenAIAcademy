@@ -12,8 +12,8 @@ export default function Nav() {
   const [expanded, setExpanded] = useState<Record<string,boolean>>({});
   const toggle = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLElement>(null);
-  const currentGroup = navigation.find(group => group.items.some(item => item.href === pathname));
-  const title = pathname === '/' ? 'Welcome' : currentGroup?.items.find(item => item.href === pathname)?.label || 'Academy';
+  const currentGroup = navigation.find(group => group.items.some(item => item.href === pathname || (item.href === '/cheat-sheets' && pathname.startsWith('/cheat-sheets/'))));
+  const title = pathname === '/' ? 'Welcome' : currentGroup?.items.find(item => item.href === pathname)?.label || (pathname.startsWith('/cheat-sheets/') ? 'Codex guide' : 'Academy');
   useEffect(() => {
     if (!open) return;
     const previous = document.body.style.overflow;

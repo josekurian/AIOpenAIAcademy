@@ -1,0 +1,1005 @@
+[
+  {
+    "slug": "codex-setup-in-one-hour",
+    "title": "Codex setup in 1 hour",
+    "category": "Getting started",
+    "summary": "A time-boxed first session: connect a project, give clear instructions, and verify one small change.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Before you start",
+        "body": "Allow extra time for downloads, account access, or company approvals. Use a disposable sample repository and an editor. Install the runtime required by that project from its official vendor. This is a suggested 60-minute lab, not an installation-time guarantee."
+      },
+      {
+        "title": "Minutes 0\u201310 \u00b7 Choose your interface",
+        "body": "Desktop: follow the official quickstart, sign in, select Codex for software work, and open your project folder. Terminal: open the official CLI page and choose the installer for your OS. Do not install multiple copies unless you need them. Windows users should follow the Windows-specific instructions on the provider page."
+      },
+      {
+        "title": "Minutes 10\u201320 \u00b7 Confirm your workspace",
+        "body": "In your terminal, change to your actual project folder and inspect Git state. Replace the example path before running it.\n\ncd /path/to/your/project\ngit status\n\nFor CLI users, run codex and complete the offered sign-in flow. Choose only the folder and permissions needed for the exercise. Keep API keys out of prompts and Git."
+      },
+      {
+        "title": "Minutes 20\u201330 \u00b7 Explain the project",
+        "body": "Starter prompt:\nRead the README and applicable AGENTS.md. Explain the project structure, setup commands, and test commands. Identify missing prerequisites. Do not edit files yet.\n\nCompare its explanation with the repository. Resolve missing dependencies before asking for code changes."
+      },
+      {
+        "title": "Minutes 30\u201345 \u00b7 Make one small change",
+        "body": "Choose a text correction or a small validation fix. State the file or feature, expected behavior, and a concrete acceptance check. Ask Codex to preserve unrelated work and use the existing stack. Review the proposed commands and resulting diff."
+      },
+      {
+        "title": "Minutes 45\u201360 \u00b7 Verify and review",
+        "body": "Run the checks documented by your project, inspect git diff, and open the changed screen or execute the changed behavior. Ask Codex to report which checks actually ran and what remains unverified. Commit only the intended files after reviewing them."
+      },
+      {
+        "title": "If setup fails",
+        "body": "Command not found: reopen the terminal and check the installer\u2019s PATH guidance. Sign-in unavailable: check your account/workspace access. Missing dependencies: follow this repository\u2019s README. Permission denied: inspect the selected folder and permission settings rather than disabling protections globally."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/quickstart",
+      "https://learn.chatgpt.com/docs/codex/cli"
+    ]
+  },
+  {
+    "slug": "codex-command-card",
+    "title": "Codex command quick reference",
+    "category": "Quick references",
+    "summary": "A small set of terminal and interactive commands to keep beside your first project.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Terminal entry points",
+        "body": "codex \u2014 start an interactive session in the current folder.\ncodex --help \u2014 inspect commands supported by your installed version.\ncodex resume \u2014 return to a previous session.\ngit status \u2014 inspect the working tree.\ngit diff \u2014 review unstaged edits."
+      },
+      {
+        "title": "Inside an interactive CLI session",
+        "body": "/status \u2014 inspect the session.\n/permissions \u2014 review access boundaries.\n/model \u2014 choose from available models.\n/init \u2014 create repository instructions; review the result.\n/review \u2014 request a change review.\n\nSlash commands belong in Codex, not your system shell. Availability can change; use the installed help and official reference."
+      },
+      {
+        "title": "Reliable working loop",
+        "body": "Explore \u2192 define one outcome \u2192 implement \u2192 run relevant checks \u2192 inspect diff \u2192 decide whether to commit. Do not equate a successful command with a correct feature."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli"
+    ]
+  },
+  {
+    "slug": "agents-md-template",
+    "title": "AGENTS.md starter template",
+    "category": "Quick references",
+    "summary": "Give Codex durable, repository-specific setup and verification guidance.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Where instructions belong",
+        "body": "Use AGENTS.md at the repository root. Add more local instructions only when a subdirectory needs different rules. Review existing instructions before adding another file. More specific instruction files can override earlier guidance."
+      },
+      {
+        "title": "Copy and adapt this template",
+        "body": "# Repository instructions\n\n## Purpose\nDescribe this project and its users.\n\n## Setup\nList the exact supported runtime and dependency install command.\n\n## Verification\nList existing test, lint, typecheck, and build commands.\n\n## Boundaries\nPreserve unrelated changes. Never commit secrets or real customer data.\nUse existing conventions. Explain failures and unverified behavior.\n\n## Delivery\nSummarize changed behavior and actual checks. Review changes before publishing."
+      },
+      {
+        "title": "Verify the instructions",
+        "body": "Start a fresh session in the project. Ask Codex to identify applicable instructions and summarize the test commands. Check the output against your files. README.md and PROJECT.md are useful documentation, but do not assume every Markdown file is automatically loaded as instructions."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "codex-task-prompts",
+    "title": "Codex task prompt patterns",
+    "category": "Quick references",
+    "summary": "Reusable prompts for exploration, implementation, debugging, and review.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Explore",
+        "body": "Read the applicable instructions and map the execution path for [feature]. Identify its inputs, outputs, tests, and risks. Report findings before changing code."
+      },
+      {
+        "title": "Implement",
+        "body": "Implement [specific behavior] in [scope]. Preserve [constraints]. Reuse existing components. Acceptance: [observable result]. Run [documented checks] and explain any verification gap."
+      },
+      {
+        "title": "Debug",
+        "body": "Reproduce [failure] using [steps and sanitized sample]. Find the cause before editing. Add a regression check where useful, make the smallest complete fix, and show the before/after behavior."
+      },
+      {
+        "title": "Review",
+        "body": "Review this diff for correctness, security, and regressions. Prioritize actionable issues with file locations, impact, and a reproduction or test. Do not change files during the review."
+      },
+      {
+        "title": "Improve your context",
+        "body": "Attach relevant files, exact errors with secrets removed, and expected behavior. Split unrelated tasks. Say which actions are authorized and whether external publishing is included."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "openai-api-starter",
+    "title": "OpenAI API environment checklist",
+    "category": "Quick references",
+    "summary": "Prepare a server-side API experiment without mixing up Codex access and application credentials.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Separate the two accounts of access",
+        "body": "Signing into Codex does not automatically configure API credentials for your application. Check your OpenAI project access, billing, model availability, and usage limits on the provider platform."
+      },
+      {
+        "title": "Prepare a sample app",
+        "body": "Use a separate project folder, a supported runtime, and the official SDK instructions linked below. Store OPENAI_API_KEY using your local environment or secret manager. Ignore local secret files in Git. Never put the key in a browser bundle, mobile client, prompt, or screenshot."
+      },
+      {
+        "title": "Ask Codex to build a first request",
+        "body": "Create a minimal server-side example using the current official OpenAI quickstart and an available model. Read the API key from the environment. Use a synthetic input. Handle missing credentials and API failures without logging secrets. Explain how to run it and expected usage costs."
+      },
+      {
+        "title": "Verify before expanding",
+        "body": "First test input validation and error handling with mocks. Then run one explicitly authorized live request with a small input and a spending limit. Check output, latency, failure behavior, and usage. A mock passing does not prove the live API works."
+      }
+    ],
+    "sources": [
+      "https://developers.openai.com/api/docs/quickstart"
+    ]
+  },
+  {
+    "slug": "codex-troubleshooting",
+    "title": "Codex setup troubleshooting",
+    "category": "Quick references",
+    "summary": "Diagnose setup failures without broad resets or deleting project work.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Environment problems",
+        "body": "Record the exact error and current folder. Check the project runtime against its README. Inspect the lockfile and use the repository\u2019s package manager. Do not delete dependency locks or reset a database just to make a command pass."
+      },
+      {
+        "title": "Access problems",
+        "body": "Check account eligibility, selected workspace, and permissions. CLI users can inspect /status and /permissions. For an application API failure, check its project credentials separately from Codex login. Never paste a token into a help request."
+      },
+      {
+        "title": "Unexpected edits",
+        "body": "Stop the task, inspect git status and git diff, and identify which changes are yours. Ask for a targeted correction. Avoid broad restore/reset commands that could discard unrelated work."
+      },
+      {
+        "title": "Incomplete validation",
+        "body": "Request the exact commands executed, their results, and missing prerequisites. If database, browser, or external-service checks did not run, retain that limitation in the handoff."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://developers.openai.com/api/docs/quickstart"
+    ]
+  },
+  {
+    "slug": "use-case-01",
+    "title": "Use case 01: Explore an unfamiliar repository",
+    "category": "Repository onboarding",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Existing cloned repository; Git; runtime specified by README."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Open the repository root. Read README and lockfiles before installing anything. Prepare a scratch notes file outside application code.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Map entry points, dependencies, data flow, and test commands without edits.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Trace one real feature from input to output and verify every referenced path exists."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If documentation disagrees with code, record the discrepancy and follow executable evidence."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-02",
+    "title": "Use case 02: Build a responsive landing page",
+    "category": "Frontend",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "A web project with an existing development script; browser."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Use the project\u2019s current frontend stack. Start its documented dev server on an available port. Prepare a content outline and a mobile wireframe.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Build a responsive landing page using existing components with clear headings and keyboard-accessible links.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Check 320px and desktop widths, keyboard focus, real navigation targets, and reduced motion."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If the preview is blank, inspect server output and browser errors before changing the layout."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-03",
+    "title": "Use case 03: Create a React form",
+    "category": "Frontend",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Existing React app; form endpoint contract or local mock."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Use synthetic input. Document required fields, validation rules, and success/error responses before implementing.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Create an accessible inquiry form with labels, pending state, validation, and retryable errors.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Test invalid email, empty fields, failed request, success, and duplicate-click protection."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If submission fails, separate client validation from server rejection; do not show success for failed requests."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-04",
+    "title": "Use case 04: Create a server API endpoint",
+    "category": "Backend",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Server application; HTTP client; local test environment."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Read route conventions. Define request and response shapes. Use a mock storage adapter until a disposable database is ready.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Add one validated endpoint following existing conventions; avoid exposing internal errors.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Exercise valid input, malformed input, unknown fields, and storage failure."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If requests return 404, confirm server port, method, and route registration."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-05",
+    "title": "Use case 05: Build an OpenAI text assistant",
+    "category": "OpenAI API",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Server runtime; official SDK; project API access for a live smoke check."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Keep credentials server-side. Define a small input limit, output contract, and mocked API response.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Build a minimal assistant using the current official quickstart. Handle missing credentials, timeout, and provider failure.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Run mock tests first; with authorization, make one bounded live request and inspect usage."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "For authentication errors, verify the application project key; Codex login is separate."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+      "https://developers.openai.com/api/docs/quickstart"
+    ]
+  },
+  {
+    "slug": "use-case-06",
+    "title": "Use case 06: Extract structured data",
+    "category": "OpenAI API",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Server app; synthetic text fixtures; schema validator."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Define required output fields and invalid examples. Review the current API structured-output guide before implementation.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Extract invoice fields from synthetic text into a validated schema. Flag missing evidence rather than inventing values.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Test missing fields, malformed input, and model refusal/error handling."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If parsing fails, inspect the actual response type and schema; avoid brittle substring extraction."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+      "https://developers.openai.com/api/docs/quickstart"
+    ]
+  },
+  {
+    "slug": "use-case-07",
+    "title": "Use case 07: Build a document retrieval prototype",
+    "category": "OpenAI API",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Local server; approved sample documents; storage isolated from production."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Create a tiny document set with known answers and unanswerable questions. Record provenance and deletion requirements.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Implement a retrieval prototype using current OpenAI guidance. Cite retrieved evidence and abstain when unsupported.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Check grounded answers, irrelevant queries, deleted documents, and malicious text inside a document."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If answers are unsupported, inspect retrieved context before tuning the prompt."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+      "https://developers.openai.com/api/docs/quickstart"
+    ]
+  },
+  {
+    "slug": "use-case-08",
+    "title": "Use case 08: Add a tool-using assistant",
+    "category": "OpenAI API",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Server app; mock tool functions; explicit tool input schemas."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Begin with a read-only inventory lookup over synthetic data. Keep real writes disabled and validate tool arguments on the server.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Add a tool-based lookup with allowlisted functions, argument validation, and bounded retries.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Test unknown tool names, invalid IDs, tool failures, and instructions embedded in tool output."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If tool calls loop, inspect stop conditions and enforce a step limit."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+      "https://developers.openai.com/api/docs/quickstart"
+    ]
+  },
+  {
+    "slug": "use-case-09",
+    "title": "Use case 09: Create an evaluation harness",
+    "category": "Testing",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Local test runner; representative synthetic cases; saved expected outcomes."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Define pass/fail criteria before running models. Keep a fixed holdout set and separate live API tests from offline checks.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Build an evaluation runner that records case IDs, expected behavior, results, latency, and failures.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Include easy, edge, and adversarial cases; confirm a deliberately bad result fails."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If scores vary, inspect test ambiguity and sampling instead of moving the success threshold."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-10",
+    "title": "Use case 10: Debug an existing bug",
+    "category": "Maintenance",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Reproducible project checkout; sanitized failure steps."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Capture baseline behavior and current Git diff. Install locked dependencies and isolate one failing case.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Reproduce the defect, explain the cause, implement a focused fix, and add a regression check.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Show the failing case before the fix and passing case afterward; run nearby tests."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If you cannot reproduce, compare runtime versions and inputs before guessing a fix."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-11",
+    "title": "Use case 11: Add unit tests",
+    "category": "Testing",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Existing test framework; one module with stable behavior."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Identify public behavior and edge cases. Reuse existing fixtures; avoid coupling tests to private implementation.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Add meaningful tests for this module, including boundary inputs and a failure path.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Confirm a deliberate behavioral regression would fail at least one test."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If tests are flaky, replace timing and network dependencies with deterministic controls."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-12",
+    "title": "Use case 12: Add browser interaction tests",
+    "category": "Testing",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Web app; installed browser test runner; disposable local server."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Use the project\u2019s existing browser runner. Define a single user journey and seed synthetic data.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Test navigation and form completion with accessible locators, including one failure path.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Check the result displayed to the user, keyboard use, and mobile layout."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If selectors fail, inspect the rendered page and prefer stable accessible names."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-13",
+    "title": "Use case 13: Review a pull-request diff",
+    "category": "Maintenance",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Git repository; known base and head revisions."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Record the comparison range and uncommitted work. Review instructions first. Keep the session read-only.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Review the selected diff for regressions, with impact, location, and concrete evidence for each finding.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Verify findings against surrounding code and existing tests; distinguish uncertainty from confirmed defects."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If the diff is empty, verify the intended revisions rather than assuming no changes exist."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-14",
+    "title": "Use case 14: Refactor a legacy module",
+    "category": "Maintenance",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Existing codebase; baseline tests; documented behavior."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Choose one bounded module. Record interfaces and callers. Add a behavior check before structural changes.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Simplify this module while preserving public behavior and avoiding unrelated dependency upgrades.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Compare behavior before and after; run callers\u2019 tests and inspect exported interfaces."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If tests fail broadly, reduce the refactor scope and isolate the behavioral change."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-15",
+    "title": "Use case 15: Prepare a database migration",
+    "category": "Backend",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Disposable local database; migration tool already used by the repository."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Create a synthetic seed and a local backup. Document compatibility and recovery; never point the exercise at production.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Draft a versioned migration for the requested change with validation queries and a recovery plan.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Apply to an empty and a representative seeded database; inspect constraints and existing records."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If migration history differs, investigate drift; do not drop the database as a shortcut."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-16",
+    "title": "Use case 16: Containerize a development app",
+    "category": "Delivery",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Docker installed; existing app with a verified local start command."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Identify runtime, build steps, ports, and secret injection. Use a local-only disposable environment.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Create a minimal container setup with a non-root runtime where supported and no baked-in secrets.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Build, start, check health, restart, and verify expected persistence and port bindings."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If the container exits, inspect logs and process startup rather than disabling health checks."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-17",
+    "title": "Use case 17: Add continuous integration checks",
+    "category": "Delivery",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Repository with passing local checks; existing CI provider or a chosen sandbox repository."
+      },
+      {
+        "title": "Environment setup",
+        "body": "List required commands and runtime versions. Keep secrets and deployment steps out of the initial workflow.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Add a CI workflow that installs locked dependencies and runs lint, types, tests, and build as applicable.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Validate workflow syntax and review permissions; verify an actual run separately after authorized publication."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If CI differs from local, compare environment variables, operating system, and dependency cache state."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-18",
+    "title": "Use case 18: Improve accessibility",
+    "category": "Frontend",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Running web app; browser; a specific page or interaction."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Record keyboard order, headings, labels, focus visibility, and contrast. Preserve current content and behavior.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Fix the observed accessibility barriers using semantic HTML and existing design conventions.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Navigate without a mouse; test zoom, narrow width, error announcements, and reduced motion."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If an automated scan passes, still inspect interaction behavior; scanning is not a complete audit."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-19",
+    "title": "Use case 19: Write a developer handoff",
+    "category": "Documentation",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "Repository checkout; working commands and known limitations."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Gather actual setup and validation evidence. Separate implemented behavior from planned features.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Update README and a concise handoff with setup, architecture, checks, limitations, and next steps.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Follow the instructions in a fresh disposable checkout when feasible; verify paths and commands."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If a step cannot be reproduced, label it unverified instead of presenting it as complete."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  },
+  {
+    "slug": "use-case-20",
+    "title": "Use case 20: Package a reusable team workflow",
+    "category": "Documentation",
+    "summary": "Set up your workspace, use the starter prompt, and verify the result for this Codex exercise.",
+    "reviewed": "October 25, 2026",
+    "sections": [
+      {
+        "title": "Goal and prerequisites",
+        "body": "An established repeatable task; repository instructions; representative examples."
+      },
+      {
+        "title": "Environment setup",
+        "body": "Start with an ordinary documented workflow and success criteria. Use AGENTS.md for durable repo guidance; only package a skill if reusable task instructions justify it.\n\nOpen only the intended project folder in Codex. Read applicable AGENTS.md and README instructions. Inspect git status before edits. Use sample data and keep secrets out of the repository."
+      },
+      {
+        "title": "Starter prompt",
+        "body": "Document this repeatable task with inputs, steps, outputs, failure handling, and verification. Avoid adding tools or services without need.\n\nFirst confirm the environment and relevant commands. Preserve unrelated changes. Report the files changed, checks actually run, and unresolved limitations."
+      },
+      {
+        "title": "Build in small steps",
+        "body": "Ask for a short implementation plan. Resolve missing prerequisites, implement one bounded slice, and inspect its diff before expanding. Use the existing package manager and lockfile rather than copying commands from an unrelated stack."
+      },
+      {
+        "title": "Acceptance checks",
+        "body": "Try it on a normal case, an edge case, and a failure; record limitations and refine instructions."
+      },
+      {
+        "title": "Troubleshooting",
+        "body": "If the workflow is too broad, split it by outcome rather than accumulating contradictory rules."
+      },
+      {
+        "title": "Finish and hand off",
+        "body": "Review the complete diff, record the verification evidence, and document remaining work. Publishing, production migrations, and paid API calls are separate actions requiring an appropriate scope and budget."
+      }
+    ],
+    "sources": [
+      "https://learn.chatgpt.com/docs/codex/cli",
+      "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    ]
+  }
+]
