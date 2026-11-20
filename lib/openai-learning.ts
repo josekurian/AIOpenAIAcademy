@@ -1,9 +1,12 @@
 // Editorial snapshot, not a live provider catalog. Recheck sources before updating.
-export const reviewedOn = 'October 25, 2026';
+export const reviewedOn = 'November 20, 2026';
 export const academySource = 'https://help.openai.com/en/articles/20001270-openai-academy-courses';
 export const academyCatalog = 'https://academy.openai.com/pages/courses';
 export const certifiedSource = 'https://help.openai.com/en/articles/20001151-openai-certified-app';
 export const teacherSource = 'https://academy.openai.com/en/public/clubs/k-12-education-aacga/resources/chatgpt-foundations-for-teachers';
+export const partnerNetworkOverview = 'https://openai.com/business/partners/';
+export const partnerPortal = 'https://partners.openai.com/overview';
+export const partnerApplication = 'https://partners.openai.com/partner-application';
 export const categories = ['All courses', 'Foundations', 'API', 'Codex', 'Leadership', 'Education'] as const;
 export type LearningCategory = typeof categories[number];
 export const officialCourses: {title: string; duration: string; category: LearningCategory; outcome: string}[] = [
@@ -27,4 +30,6 @@ export const learningResources = [
   {title: 'ChatGPT & Codex documentation', label: 'PRODUCT GUIDES', description: 'Keep the official product reference close as you learn new features and set up your workspace.', href: 'https://learn.chatgpt.com/docs'},
   {title: 'OpenAI API quickstart', label: 'DEVELOPER STARTER', description: 'Start with the official setup guide before attempting a first API project. Product usage may carry separate costs.', href: 'https://developers.openai.com/api/docs/quickstart'},
   {title: 'Agent development', label: 'BUILDING SYSTEMS', description: 'Use the official agents guide as a reference while designing a small, bounded prototype.', href: 'https://developers.openai.com/api/docs/guides/agents'},
+  {title: 'OpenAI Partner Network', label: 'PARTNER RESOURCE', description: 'Review the public program overview for partner capabilities, enablement, technical support, and the Enroll → Enable → Grow model.', href: partnerNetworkOverview},
+  {title: 'Partner portal & Learn tab', label: 'APPROVED PARTNERS', description: 'Approved partner users can sign in to access organization-specific enablement, PartnerU training, and partner-network resources.', href: partnerPortal},
 ];
