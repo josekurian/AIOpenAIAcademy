@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.hybridgenai.oci-db-keepalive</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/local/bin/python3</string>
+    <string>/Users/josekurian/AIOpenAIAcademy/deployment/oci/oci-db-keepalive.py</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>3</integer>
+    <key>Minute</key><integer>15</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/josekurian/.local/state/hybridgenai/oci-db-keepalive.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/josekurian/.local/state/hybridgenai/oci-db-keepalive.stderr.log</string>
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>
