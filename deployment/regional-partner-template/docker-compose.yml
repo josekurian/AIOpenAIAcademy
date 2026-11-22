@@ -1,0 +1,46 @@
+name: hybridlabs-cochin
+services:
+  web:
+    build:
+      context: ../..
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://hybridlabs.dev:3182}
+        PARTNER_DISPLAY_NAME: ${PARTNER_DISPLAY_NAME:-Hybrid Labs}
+        PARTNER_DOMAIN: ${PARTNER_DOMAIN:-hybridlabs.dev}
+        PARTNER_CITY: ${PARTNER_CITY:-Cochin, India}
+        PARTNER_OPERATOR: ${PARTNER_OPERATOR:-Hybrid Cloud Services LLC / HybridGenAI Academy}
+        PARTNER_STATUS: ${PARTNER_STATUS:-proposed regional partner template}
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-3182}:3000"
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-academy}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the partner env}@db:5432/${POSTGRES_DB:-academy}
+      NEXT_TELEMETRY_DISABLED: '1'
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [partner_private]
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-academy}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the partner env}
+      POSTGRES_DB: ${POSTGRES_DB:-academy}
+    volumes:
+      - partner_pgdata:/var/lib/postgresql/data
+      - ../../db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-academy} -d ${POSTGRES_DB:-academy}"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+    networks: [partner_private]
+volumes:
+  partner_pgdata:
+networks:
+  partner_private:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.244.254.0/24

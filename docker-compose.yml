@@ -5,6 +5,11 @@ services:
       context: .
       args:
         NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-}
+        PARTNER_DISPLAY_NAME: ${PARTNER_DISPLAY_NAME:-HybridGenAI Academy}
+        PARTNER_DOMAIN: ${PARTNER_DOMAIN:-academy.hybridgenai.local}
+        PARTNER_CITY: ${PARTNER_CITY:-Dallas–Fort Worth}
+        PARTNER_OPERATOR: ${PARTNER_OPERATOR:-Hybrid Cloud Services LLC}
+        PARTNER_STATUS: ${PARTNER_STATUS:-independent academy}
     restart: unless-stopped
     ports:
       - "${WEB_PORT:-3180}:3000"
