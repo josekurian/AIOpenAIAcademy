@@ -1,4 +1,10 @@
 export const navigation = [
+  {label:'Academy',href:'/academy',items:[
+    {label:'Academy platform',href:'/academy'},
+    {label:'Provider roadmap',href:'/academy#provider-sequence'},
+    {label:'Enterprise cohorts',href:'/openai-training/team-enablement'},
+    {label:'Regional partner centers',href:'/partner-centers'},
+  ]},
   {label:'Training', href:'/openai-training', items:[
     {label:'Build your learning roadmap',href:'/roadmap'},
     {label:'Public & partner programs',href:'/openai-training/programs'},

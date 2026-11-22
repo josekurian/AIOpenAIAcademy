@@ -5,7 +5,7 @@ import {useEffect, useRef, useState} from 'react';
 import {ArrowUpRight, BookOpen, ChevronDown, ChevronRight, GraduationCap, House, Menu, Sparkles, Bell, X, MessageCircle, MapPin} from 'lucide-react';
 import {navigation} from '@/lib/navigation';
 import RegistrationWidget from '@/components/RegistrationWidget';
-const icons = [BookOpen, GraduationCap, Bell, MessageCircle];
+const icons = [Sparkles, BookOpen, GraduationCap, Bell, MessageCircle];
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
