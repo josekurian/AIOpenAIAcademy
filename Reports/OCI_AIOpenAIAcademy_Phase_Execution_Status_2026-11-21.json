@@ -1,0 +1,56 @@
+{
+  "inventoryDate": "2026-11-21",
+  "status": "partially-complete",
+  "paidUpgrade": false,
+  "phases": {
+    "phase0Protect": {
+      "status": "complete",
+      "owner": "Hybrid Cloud Services LLC operations owner",
+      "verifiedBootVolumeBackup": "ocid1.bootvolumebackup.oc1.us-chicago-1.abxxeljsfyuveedrhwfv2nosqb7o5zrr5kedii3uavvbdalgn677lafwhwhq",
+      "sourceBootVolume": "ocid1.bootvolume.oc1.us-chicago-1.abxxeljslpdnmrcsrt53cxxkn57urufcijpfuh4k3d473pw7yig26aoysy6a",
+      "state": "AVAILABLE",
+      "note": "Full backup of the current shared GenAIInstance boot volume; restore test remains required."
+    },
+    "phase1Prepare": {
+      "status": "complete",
+      "compartment": "AIJobSite-Production",
+      "vcn": "jobs-vcn",
+      "publicSubnet": "jobs-public-subnet",
+      "academyNsg": "aiopenaiacademy-nsg",
+      "vault": "academy-vault",
+      "backupBucket": "academy-backups",
+      "iamPolicy": "AIOpenAIAcademy-Least-Privilege",
+      "publicDatabaseExposure": false
+    },
+    "phase2Provision": {
+      "status": "blocked",
+      "instance": null,
+      "attempts": 4,
+      "lastKnownConstraint": "Boot volume must be at least 50 GB; a corrected 50 GB request still produced no instance.",
+      "manualAction": "Launch from OCI Console in AIJobSite-Production, attach aiopenaiacademy-nsg, use jobs-public-subnet, 1 OCPU/6 GB or available A1 capacity, and a 50 GB boot volume."
+    },
+    "phase3Deploy": {
+      "status": "blocked-by-phase2",
+      "repositoryVerification": ["typecheck", "lint", "test", "build"],
+      "repositoryVerificationStatus": "passed",
+      "remoteDeployment": false
+    },
+    "phase4Observe": {
+      "status": "partial",
+      "topic": "academy-critical",
+      "logGroup": "AIOpenAIAcademy-runtime",
+      "alarms": ["Academy CPU high", "Academy object storage growth"],
+      "dashboard": "deployment/oci/monitoring/academy-dashboard-spec.json",
+      "note": "Alarm resources are active; compute alarm has no Academy datapoints until Phase 2 succeeds."
+    },
+    "phase5Expose": {
+      "status": "not-started",
+      "reason": "Deferred until application, restore, and rollback tests pass."
+    },
+    "phase6Operate": {
+      "status": "runbook-ready",
+      "weekly": ["capacity", "backup age", "Object Storage growth", "alarm delivery", "disk and memory"],
+      "monthly": ["isolated restore", "IAM review", "secret rotation", "alarm-noise review"]
+    }
+  }
+}

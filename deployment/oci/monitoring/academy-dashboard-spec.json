@@ -1,0 +1,19 @@
+{
+  "name": "AIOpenAIAcademy Operations",
+  "description": "Free-tier operational view for Academy availability, compute, ingress, storage, and recovery.",
+  "panels": [
+    {"title": "Academy CPU", "namespace": "oci_computeagent", "query": "CpuUtilization[5m].mean()", "purpose": "Detect sustained host pressure."},
+    {"title": "Academy Load Balancer", "namespace": "oci_lbaas", "query": "HttpCode_Backend_5xx_Count[5m].sum()", "purpose": "Detect backend failures."},
+    {"title": "Academy Object Storage", "namespace": "oci_objectstorage", "query": "ObjectCount[1h].mean()", "purpose": "Watch backup and artifact growth."},
+    {"title": "Academy Notifications", "namespace": "oci_ons", "query": "MessagesPublished[5m].sum()", "purpose": "Confirm alert delivery activity."},
+    {"title": "Academy Database", "namespace": "oci_autonomous_database", "query": "CpuUtilization[5m].mean()", "purpose": "Use only for a dedicated ADB after migration."},
+    {"title": "Recovery status", "type": "manual", "query": "Latest verified backup age and restore-test status", "purpose": "Operational evidence not available as a single OCI metric."}
+  ],
+  "alarm_baseline": [
+    "Academy CPU high",
+    "Academy load balancer errors",
+    "Academy object storage growth",
+    "Academy backup age or verification failure",
+    "Academy public health failure"
+  ]
+}
