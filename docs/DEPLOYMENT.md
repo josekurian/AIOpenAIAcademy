@@ -14,6 +14,10 @@ Use your configured web port if different. Avoid printing the fully resolved Com
 
 The web container waits for database health at startup. PostgreSQL is not published to the host. This network configuration alone is not a complete security boundary. The current image runs the Next server without a reverse proxy or production hardening.
 
+## Database migrations
+
+`db/schema.sql` initializes only a fresh PostgreSQL volume. Apply later changes from `db/migrations/` with a reviewed migration runner or `psql` connection, after an access-controlled backup and restore test. The Oracle AI Database scripts under `deployment/oci/database/` are separate: they target the existing AIDB through a dedicated schema and must be run with SQLcl after wallet connectivity is verified. No database password, wallet, or dump belongs in this repository.
+
 ## Data lifecycle
 `db/schema.sql` runs only on first initialization of an empty PostgreSQL volume. Preserve the volume during routine updates. Never use `docker compose down -v` as a routine troubleshooting step: it deletes persistent data. Schema changes require migrations; the repository does not yet provide a migration runner.
 

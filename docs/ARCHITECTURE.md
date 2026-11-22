@@ -3,6 +3,10 @@
 ## Runtime
 Next.js 15 App Router with React 19 and TypeScript serves pages and HTTP handlers in one Node.js service. PostgreSQL 17 is the database in Docker Compose. The UI uses plain CSS and Lucide icons. There is no Python API, worker, Redis, AI gateway, authentication service, or payment integration yet.
 
+The public practice-test routes are static and account-free. They provide independent study feedback and do not create official exam attempts or credentials. `db/migrations/001_academy_learning_rag.sql` adds the additive PostgreSQL foundation for reviewed source chunks, optional embeddings, practice tests, questions, and future attempts.
+
+The optional Oracle AI Database expansion uses the existing `AIDB` resource through an isolated schema. `deployment/oci/database/001_academy_ai_schema.sql` defines Oracle 26ai vector-ready document storage, while `002_academy_ords.sql` defines a read-only ORDS boundary. MCP access is a future read-only adapter over that boundary; arbitrary SQL, learner records, leads, secrets, and IAM operations are excluded.
+
 ## Request paths
 - `app/layout.tsx` wraps all pages with `components/Nav.tsx`, the main landmark, and footer.
 - `components/Nav.tsx` owns route-aware sidebar state and mobile keyboard behavior.

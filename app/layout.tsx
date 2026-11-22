@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import Nav from '@/components/Nav';
 import './globals.css';
+import './practice.css';
 import {siteUrl} from '@/lib/site';
 export const metadata:Metadata={
   metadataBase: new URL(siteUrl || 'http://localhost:3100'),

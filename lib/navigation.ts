@@ -9,6 +9,7 @@ export const navigation = [
     {label:'Codex cheat sheets',href:'/cheat-sheets'},
     {label:'Leadership & education',href:'/openai-training/leadership-education'},
     {label:'Guided workshops',href:'/courses'},
+    {label:'Practice tests',href:'/practice-tests'},
   ]},
   {label:'Credentials',href:'/certifications',items:[
     {label:'Credential directory',href:'/certifications/directory'},
