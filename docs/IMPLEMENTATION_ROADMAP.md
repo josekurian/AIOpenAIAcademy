@@ -1,9 +1,9 @@
-# OpenAI learning site roadmap
+# HybridGenAI Academy implementation roadmap
 
-This replaces the original full-platform roadmap following the user's October 24, 2026 scope change. The site is exclusively for OpenAI training and credentials. Job placement, franchise operations, city sites, and training for other vendors are out of scope.
+This roadmap reflects the owner's November 22, 2026 direction: build an independent Academy for Oracle customer delivery and AI automation, prioritizing OpenAI and Oracle for the first six months and adding later provider tracks only after evidence and terms review.
 
 ## Current foundation
-OpenAI learning hub, official catalog snapshot, credential comparisons, independent proposed workshops, inquiry form, responsive redwood interface, sharing/printing controls, and social metadata.
+OpenAI learning hub, official catalog snapshot, credential comparisons, independent proposed workshops, inquiry form, responsive redwood interface, sharing/printing controls, social metadata, staged provider roadmap at `/academy`, and a regional partner-center application surface at `/partner-centers`.
 
 ## Next: reliable information
 Recheck official course availability, credential conditions, and access before changing published claims. Maintain source URLs and an actual review date. Keep official resources separate from proposed independent training. Do not call course-completion badges certifications.
@@ -11,5 +11,11 @@ Recheck official course availability, credential conditions, and access before c
 ## Next: release readiness
 Verify Docker and inquiry persistence with a disposable database. Add consent, reviewed privacy terms, retention controls, rate limiting, monitoring, and tested backups before public lead collection. Configure a real public origin and TLS for sharing. Do not claim readiness based only on a local build.
 
-## Optional future training functionality
-Only when requested: confirmed workshop scheduling, instructor information, enrollment, authenticated learning access, and reviewed assessment workflows. Implement real authorization and migrations before private records. Do not build an official OpenAI exam portal or promise certification access without authorization.
+## Next: Academy delivery capabilities
+Build original course modules, 100-question practice pools per approved track, detailed answer explanations, learning progress, lab evidence, completion records, and enterprise cohort reporting. Keep practice scores private study evidence and keep Academy completion records distinct from provider-issued credentials.
+
+## Next: controlled partner operations
+Add instructor review, center applications, curriculum licensing, quality audits, regional reporting, and referral governance. Do not offer exclusivity, franchise fees, territory rights, or provider-specific marketing claims without legal review and written approvals.
+
+## Private-platform gate
+Only after authentication, authorization, tenant isolation, consent, retention/deletion controls, abuse protection, backups, and integration tests: add learner accounts, saved attempts, private portfolios, employer/project matching, partner administration, payments, or job workflows. Do not build fake dashboards or claim production readiness from a static UI.
