@@ -21,6 +21,8 @@ export const navigation = [
   {label:'Credentials',href:'/certifications',items:[
     {label:'Credential directory',href:'/certifications/directory'},
     {label:'Compare credentials',href:'/certifications'},
+    {label:'OpenAI certification preparation',href:'/certifications/openai'},
+    {label:'Anthropic certification preparation',href:'/certifications/anthropic'},
     {label:'Academy badges',href:'/certifications/badges'},
     {label:'OpenAI Certified',href:'/certifications/certified'},
     {label:'Questions & support',href:'/certifications/questions'},

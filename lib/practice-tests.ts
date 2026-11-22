@@ -1,3 +1,5 @@
+import {certificationPracticeTests} from '@/lib/certification-pools';
+
 export type PracticeQuestion = {
   id: string;
   prompt: string;
@@ -15,7 +17,7 @@ export type PracticeTest = {
   questions: PracticeQuestion[];
 };
 
-export const practiceTests: PracticeTest[] = [
+const basePracticeTests: PracticeTest[] = [
   {
     slug: 'chatgpt-foundations',
     title: 'ChatGPT Foundations practice test',
@@ -56,6 +58,8 @@ export const practiceTests: PracticeTest[] = [
     ],
   },
 ];
+
+export const practiceTests: PracticeTest[] = [...basePracticeTests, ...certificationPracticeTests];
 
 export function getPracticeTest(slug: string) {
   return practiceTests.find((test) => test.slug === slug);
