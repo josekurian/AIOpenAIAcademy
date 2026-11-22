@@ -52,7 +52,7 @@ function buildPool(prefix: string, title: string, level: PracticeTest['level'], 
       prompt: `In ${situation}, which approach best supports ${category.concept}?`,
       choices,
       answer: (base.indexOf(category.correct) - rotation + base.length) % base.length,
-      explanation: category.explanation,
+      explanation: `${category.explanation} For ${situation}, apply that rule to the stated situation, document the decision, and do not treat study evidence as a provider-issued credential.`,
     });
   }));
   return {slug: prefix, title, level, description: `100 original, source-informed questions covering ${categories.length} study domains.`, disclaimer, questions};
