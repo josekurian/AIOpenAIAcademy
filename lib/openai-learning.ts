@@ -3,7 +3,8 @@ export const reviewedOn = 'November 20, 2026';
 export const academySource = 'https://help.openai.com/en/articles/20001270-openai-academy-courses';
 export const academyCatalog = 'https://academy.openai.com/pages/courses';
 export const certifiedSource = 'https://help.openai.com/en/articles/20001151-openai-certified-app';
-export const teacherSource = 'https://academy.openai.com/en/public/clubs/k-12-education-aacga/resources/chatgpt-foundations-for-teachers';
+// The former Academy resource URL now returns 404; use the current course destination.
+export const teacherSource = 'https://www.coursera.org/learn/chatgpt-foundations-for-teachers/';
 export const partnerNetworkOverview = 'https://openai.com/business/partners/';
 export const partnerPortal = 'https://partners.openai.com/overview';
 export const partnerApplication = 'https://partners.openai.com/partner-application';

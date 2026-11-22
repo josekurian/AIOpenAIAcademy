@@ -14,6 +14,8 @@ An independent OpenAI training and credential guide operated by Hybrid Cloud Ser
 - Native sharing with copy/manual fallbacks, print styling, and social preview metadata/image.
 - Direct Forum and Academy event links, provider communication/support destinations, and downloadable calendar reminders.
 - PostgreSQL-backed inquiries for proposed independent training.
+- Original team-enablement expansion foundation: four proposed programs, delivery method, preparation requirements, enterprise inquiry path, and navigation entry point at `/openai-training/team-enablement`.
+- Enterprise inquiry qualification: additive program-interest, team-size, timeframe, and desired-outcome fields with migration `db/migrations/002_team_enablement_inquiries.sql`.
 
 ## Product boundaries
 HybridGenAI is not OpenAI Academy and claims no partnership or certification authority. Official learning is accessed on provider platforms. Proposed HybridGenAI workshops do not provide official credentials. The site is not an LMS or exam system. It does not create OpenAI accounts or provide access to restricted programs.

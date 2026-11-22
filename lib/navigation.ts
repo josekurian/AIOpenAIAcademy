@@ -2,6 +2,7 @@ export const navigation = [
   {label:'Training', href:'/openai-training', items:[
     {label:'Build your learning roadmap',href:'/roadmap'},
     {label:'Public & partner programs',href:'/openai-training/programs'},
+    {label:'Team enablement',href:'/openai-training/team-enablement'},
     {label:'All OpenAI courses',href:'/openai-training'},
     {label:'ChatGPT foundations',href:'/openai-training/foundations'},
     {label:'API development',href:'/openai-training/api'},

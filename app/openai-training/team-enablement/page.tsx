@@ -1,0 +1,19 @@
+import Link from 'next/link';
+import {ArrowRight, CheckCircle2, ShieldCheck} from 'lucide-react';
+import LeadForm from '@/components/LeadForm';
+import {enablementMethod, teamEnablementPrograms} from '@/lib/team-enablement';
+import {pageMetadata} from '@/lib/site';
+
+export const metadata = pageMetadata('OpenAI Team Enablement Programs', 'Independent HybridGenAI programs for teams building practical ChatGPT, Codex, and OpenAI API workflows.', '/openai-training/team-enablement');
+
+export default function TeamEnablement() {
+  return <>
+    <section className="container pageHero"><div className="eyebrow">TEAM ENABLEMENT · PROPOSED HYBRIDGENAI PROGRAMS</div><h1>Turn AI learning into <em>work your team can use.</em></h1><p>Independent, hands-on programs for teams that want to practice with permitted work, test their outputs, and leave with reusable methods.</p><div className="actions"><a className="button primary" href="#programs">Compare programs <ArrowRight size={16}/></a><a className="button secondary" href="#inquiry">Discuss a team need</a></div></section>
+    <section className="container sourceBanner"><ShieldCheck size={21}/><p>HybridGenAI Academy is an independent education provider. These are proposed services, not official OpenAI training, certification exams, or a claim of OpenAI authorization.</p></section>
+    <section className="section container" id="programs"><div className="sectionHeader"><div><div className="eyebrow">CHOOSE A STARTING POINT</div><h2 className="headingGreen">Programs shaped around the work.</h2><p>We scope the work, access, participants, and evidence before a program begins.</p></div></div><div className="programGrid">{teamEnablementPrograms.map(program => <article className="programCard" key={program.title}><span className="softBadge">{program.duration}</span><h2>{program.title}</h2><p><strong>For:</strong> {program.audience}</p><p>{program.outcome}</p><ul>{program.focus.map(item => <li key={item}>{item}</li>)}</ul></article>)}</div></section>
+    <section className="section tinted"><div className="container"><div className="sectionHeader"><div><div className="eyebrow">THE DELIVERY METHOD</div><h2>Learn it. Build it. Check it. Reuse it.</h2><p>Each engagement keeps human review, privacy, and measurable outcomes visible.</p></div></div><div className="cards three">{enablementMethod.map(([title, text], index) => <article className="featureCard" key={title}><div className="featureIcon"><CheckCircle2/></div><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+    <section className="section container"><div className="sectionHeader"><div><div className="eyebrow">BEFORE WE BEGIN</div><h2 className="headingOrange">A practical, bounded starting point.</h2></div></div><div className="contentGrid"><article className="contentBox"><h2>Customer provides</h2><ul><li>An internal owner who can make decisions</li><li>Protected participation time</li><li>Approved tasks, documents, or sample data</li><li>Review criteria and relevant security requirements</li></ul></article><article className="contentBox"><h2>HybridGenAI prepares</h2><ul><li>Program scope and learning objectives</li><li>Exercises and review checklists</li><li>Baseline and final evidence plan</li><li>Independent delivery and credential disclosures</li></ul></article></div></section>
+    <section className="container learningCTA" id="inquiry"><div><h2>Plan a team enablement conversation.</h2><p>Share the team, workflow, and desired outcome. We will respond with a proposed scope; this form does not enroll anyone or create an OpenAI account.</p></div><div className="formWrap"><LeadForm kind="enterprise"/></div></section>
+    <p className="container sourceNotes">For official OpenAI courses and current access requirements, <Link href="/openai-training">visit the learning guide</Link>. Proposed HybridGenAI programs do not issue OpenAI credentials.</p>
+  </>;
+}
